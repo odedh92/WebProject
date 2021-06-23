@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oded's Pizza</title>
+    <script src="/Users/odedhaina/Desktop/האקר יו עבודות/פיתוח web/פרויקט/projects/pizzapage/script/jquery-1.11.2.min.js"></script>
+    <script src="/Users/odedhaina/Desktop/האקר יו עבודות/פיתוח web/פרויקט/projects/pizzapage/script/pizzapage.js"></script>
+    <style>
+     body{
+       text-align: center;
+       background-image: url(images/pizzaoreder.jpg);
+       background-size: cover;
+       color: white;
+     }
+     h3{
+       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       text-decoration: solid;
+     }
+    #tPrice{
+      font-size: 22px;
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+  <div id="Div1">
+    <h1>Home Delivery</h1>
+    <hr>
+    <h2>personal details</h2>
+    <form action="" id="myForm" >
+    <label>first name:</label><br>
+        <input type="text" name="ufirst" placeholder="first name"><br><br>
+
+        <label>last name:</label><br>
+        <input type="text" name="ulast" placeholder="last name"><br><br>
+
+        <label>phone number:</label><br>
+        <input type="number" name="p1" placeholder="phone number"><br><br>
+
+        <div class="col-md-3 mb-3">
+          <label for="validationServer04">Branch:</label>
+          <select class="custom-select is-invalid" id="validationServer04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Ashdod</option>
+            <option>Tel aviv</option>
+          </select>
+          <div class="invalid-feedback"><br>
+        
+        <label>street:</label><br>
+        <input type="text" name="uStreet" placeholder="street"><br><br>
+
+        <label>street number:</label><br>
+        <input type="number" name="uHouse" placeholder="street number"><br><br>
+
+        <label for="cname">Name on Card</label><br>
+			  <input type="text" id="cname" name="cardname" placeholder="name on the card"><br><br>
+			  <label for="ccnum">Credit card number</label><br><br>
+			  <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br><br>
+			  <label for="expmonth">Exp Month</label><br><br>
+        <input type="text" id="expmonth" name="expmonth" placeholder="September"><br><br>
+      </form>
+
+         <button id="Send1" onclick="muFinction2()" value="Reset form" >Next step</button>
+        </div>
+      <hr>
+      <div id="Div2" > 
+      <h3>choose Pizza size</h3>
+     <label for="">Pizza size</label>
+     <select id="pizzaSize" onchange="setBasicPrice()" >
+       <option value="40">Small</option>
+       <option value="50">Medium</option>
+       <option value="60">Large</option>
+     </select>
+
+    <h3>whice extras do you like?</h3>
+    <button type="button" class="btn btn-primary" onclick="addPrice(5)" >Olives</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(5)" >Mushrooms</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(5)" >Onion</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(5)" >Tuna</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(5)" >Pepper</button>
+
+    <h3>Something to drink?</h3>
+    <button type="button" class="btn btn-primary" onclick="addPrice(10)" >Coca cola</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(10)" >Coca cola zero</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(10)" >Sprite</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(10)" >Fanta</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(8)" >Sparkling water</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(8)" >Water </button>
+    <hr>
+    <div id="tPrice" > 
+     <h4>the price:</h4>
+    </div>
+    <button onclick="myFunction()" type="button" id="endOrder" class="btn btn-success">Finish the order </button>
+  <div id="demo" style="position: absolute; visibility: hidden; " >
+   the order is complate :) the pizza will arive in 30 min 
+  </div>
+  </div>
+</body>
+</html>

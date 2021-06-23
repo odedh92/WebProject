@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oded's Pizza</title>
+    <script src="script/jquery-1.11.2.min.js"></script>
+    <script src="script/pizzapage.js"></script>
+    <style>
+     body{
+       text-align: center;
+       background-image: url(images/pizzaoreder.jpg);
+       background-size: cover;
+       color: white;
+     }
+
+
+
+
+
+    </style>
+</head>
+<body>
+  <div id="Div1">
+    <h1>Home Delivery</h1>
+    <hr>
+    <h2>personal details</h2>
+    <label>first name:</label><br>
+        <input type="text" name="ufirst" placeholder="first name"><br><br>
+
+        <label>last name:</label><br>
+        <input type="text" name="ulast" placeholder="last name"><br><br>
+
+        <label>phone number:</label><br>
+        <input type="number" name="p1" placeholder="phone number"><br><br>
+
+        <div class="col-md-3 mb-3">
+          <label for="validationServer04">Branch:</label>
+          <select class="custom-select is-invalid" id="validationServer04" required>
+            <option selected disabled value="">Choose...</option>
+            <option>Ashdod</option>
+            <option>Tel aviv</option>
+          </select>
+          <div class="invalid-feedback"><br>
+        
+        <label>street:</label><br>
+        <input type="text" name="uStreet" placeholder="street"><br><br>
+
+        <label>street number:</label><br>
+        <input type="number" name="uHouse" placeholder="street number"><br><br>
+         <button id="Send1">שלח</button>
+        </div>
+      <hr>
+      <div id="Div2" > 
+      <h4>choose Pizza size</h4>
+     <label for="">Pizza size</label>
+     <select id="pizzaSize" onchange="setBasicPrice()" >
+       <option value="40">Small</option>
+       <option value="50">Medium</option>
+       <option value="60">Large</option>
+     </select>
+
+
+    <h4>whice extras do you like?</h4>
+    <button type="button" class="btn btn-primary" onclick="addPrice(5)" >Olives</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(5)" >Mushrooms</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(5)" >Onion</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(5)" >Tuna</button>
+    <button type="button" class="btn btn-success" onclick="addPrice(5)" >Pepper</button>
+    <hr>
+    <div id="tPrice" > 
+      The price is:
+		</div><hr/>
+  </div>
+</body>
+</html>

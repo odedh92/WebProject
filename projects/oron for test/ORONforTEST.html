@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oron Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(106, 121, 170);
+
+        }
+
+        .container {
+            background-color: darkseagreen;
+            display: inline-block;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            margin: 500px;
+        }
+
+    </style>
+    <script>
+        var points = 0;
+        var level = 10;
+        window.onload = function () {
+            resetExercise();
+            Upoints.innerHTML = points;
+        }
+        if (localStorage.getItem("points") !== "" && localStorage.getItem
+            ("points") !== null) {
+            var points = localStorage.getItem("points")
+        } else {
+            var points = 0;
+        }
+
+        function changeLevel() {
+            var x = document.getElementById("level").value;
+            level = Number(x);
+            resetExercise();
+        }
+
+
+        function getRandomNumber() {
+
+            return Math.floor((Math.random() * level) + 1);
+        }
+
+
+        function resetExercise() {
+            document.getElementById("num1").innerHTML = getRandomNumber();
+            document.getElementById("num2").innerHTML = getRandomNumber();
+            sum.value = ""
+
+            if (localStorage.getItem("points") !== "" && localStorage.getItem
+                ("points") !== null) {
+
+            }
+
+        }
+        function checkAnswer() {
+            var userAns = Number(sum.value);
+            console.log(userAns);
+            var sumAns = Number(num1.innerHTML) + Number(num2.innerHTML);
+            if (userAns == sumAns) {
+                document.getElementById("message").innerHTML = "כל הכבוד"
+                points = Number(points) + 10;
+                Upoints.innerHTML = points;
+                resetExercise();
+            } else {
+                document.getElementById("message").innerHTML = "לא נורא...נסה שנית"
+            }
+
+        }
+        function saveGame() {
+
+            localStorage.setItem("points", points);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>תרגול לאורון</h1>
+        <hr>
+         תבחר את רמת הקושי שמתאימה לך:
+        <select onchange="changeLevel()" name="" id="level">
+            <option value="10">קל 1-10</option>
+            <option value="100">בינוני 1-100</option>
+            <option value="1000">קשה 1-1000</option>
+        </select>
+        <hr>
+        <span id="num1"></span>
+        <span id="op"> + </span>
+        <span id="num2"></span> =
+        <input type="number" id="sum">
+        <br><br>
+        <button onclick="checkAnswer()">בדוק תשובה</button>
+        <br><br>
+        <button onclick="resetExercise()">דלג לתרגיל הבא</button>
+        <br><br>
+        <button onclick="saveGame()">save</button>
+
+        <div>points: <span id="Upoints"></span></div>
+        <div id="message"></div>
+
+    </div>
+
+</body>
+
+</html>
